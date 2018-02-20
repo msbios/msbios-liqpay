@@ -1,0 +1,56 @@
+{
+  "name": "msbios/liqpay",
+  "description": "MSBios LiqPay",
+  "license": "MIT",
+  "keywords": [
+    "php"
+  ],
+  "homepage": "https://github.com/msbios/msbios-liqpay",
+  "minimum-stability": "stable",
+  "authors": [
+    {
+      "name": "Judzhin Miles",
+      "email": "info@msbios.com"
+    }
+  ],
+  "autoload": {
+    "psr-4": {
+      "MSBios\\LiqPay\\": "src/"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "MSBiosTest\\LiqPay\\": "tests/"
+    }
+  },
+  "require": {
+    "liqpay/liqpay": "^1.2",
+    "msbios/msbios": "^1.0"
+  },
+  "require-dev": {
+    "msbios/application": "^1.0",
+    "msbios/test": "^1.0",
+    "msbios/debug": "^1.0"
+  },
+  "scripts": {
+    "cs-check": "phpcs",
+    "cs-fix": "phpcbf",
+    "test": [
+      "@cs-check",
+      "phpunit --colors=always"
+    ],
+    "themes": [
+      "cd public && ln -s ../vendor/msbios/application/themes/default/public default",
+      "cd public && ln -s ../vendor/msbios/cpanel/themes/limitless/public limitless"
+    ],
+    "serve": "php -S 0.0.0.0:3107 -t public index.php -d display_errors=1 -d extension_dir=\"ext\"",
+    "commit": "git add . && git commit -a -m \"Lazy Composer Commiter\" && git push",
+    "test-coverage": "phpunit --colors=always --coverage-clover clover.xml",
+    "upload-coverage": "coveralls -v"
+  },
+  "extra": {
+    "zf": {
+      "component": "MSBios\\LiqPay"
+    }
+  }
+}
