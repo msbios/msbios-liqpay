@@ -4,16 +4,16 @@
  * @author Judzhin Miles <info[woof-woof]msbios.com>
  */
 
-namespace MSBios\LiqPay;
+namespace MSBios\LiqPay\Form;
 
 use Zend\Form\Element\Hidden;
-use Zend\Form\Form as DefaultForm;
+use Zend\Form\Form;
 
 /**
- * Class Form
- * @package MSBios\LiqPay
+ * Class CnbForm
+ * @package MSBios\LiqPay\Form
  */
-class Form extends DefaultForm
+class CnbForm extends Form
 {
     /**
      * @inheritdoc
@@ -29,5 +29,4 @@ class Form extends DefaultForm
             'name' => 'signature'
         ]);
     }
-
 }

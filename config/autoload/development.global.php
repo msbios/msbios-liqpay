@@ -7,20 +7,10 @@
 
 namespace MSBios\LiqPay;
 
+use MSBios\Form\Initializer\FormElementManagerInitializer;
 use Zend\ServiceManager\Factory\InvokableFactory;
 
 return [
-
-    // 'router' => [
-    //     'routes' => [
-    //         'home' => [
-    //             'may_terminate' => true,
-    //             'child_routes' => [
-    //
-    //             ]
-    //         ],
-    //     ],
-    // ],
 
     'controllers' => [
         'factories' => [
@@ -32,13 +22,12 @@ return [
                 Controller\IndexController::class
         ],
         'initializers' => [
+            FormElementManagerInitializer::class =>
+                new FormElementManagerInitializer
         ]
     ],
 
     'view_manager' => [
-        'template_map' => [
-            // Template map
-        ],
         'template_path_stack' => [
             __DIR__ . '/../../view',
         ],

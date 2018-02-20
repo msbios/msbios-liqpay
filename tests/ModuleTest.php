@@ -5,7 +5,7 @@
  */
 namespace MSBiosTest\LiqPay;
 
-use MSBios\LigPay\Module;
+use MSBios\LiqPay\Module;
 use PHPUnit\Framework\TestCase;
 
 /**

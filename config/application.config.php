@@ -6,6 +6,7 @@
 return [
     // Retrieve list of modules used in this application.
     'modules' => [
+        'MSBios\Form',
         'Zend\Mvc\Plugin\FilePrg',
         'Zend\Form',
         'Zend\Hydrator',

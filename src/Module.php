@@ -18,17 +18,10 @@ use Zend\ModuleManager\Feature\BootstrapListenerInterface;
  */
 class Module implements
     ModuleInterface,
-    AutoloaderProviderInterface,
-    BootstrapListenerInterface
+    AutoloaderProviderInterface
 {
     /** @const VERSION */
     const VERSION = '1.0.0';
-
-    public function onBootstrap(EventInterface $e)
-    {
-        r($e->getApplication()->getServiceManager()->get('FormElementManager')); die();
-    }
-
 
     /**
      * Returns configuration to merge with application configuration
